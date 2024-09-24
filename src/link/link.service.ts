@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
+import { CreateLinkDto } from './dto/create-link.dto';
 
 @Injectable()
 export class LinkService {
@@ -8,7 +9,7 @@ export class LinkService {
   getLinks() {
     return this.prisma.link.findMany();
   }
-  async createLink(link) {
+  async createLink(link: CreateLinkDto) {
     const { url } = link;
     const shortUrl = Math.random().toString(36).substring(2, 9);
 
