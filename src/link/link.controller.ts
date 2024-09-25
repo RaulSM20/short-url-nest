@@ -10,7 +10,7 @@ export class LinkController {
   getLinks() {
     return this.linkService.getLinks();
   }
-  @Get('/:shortUrl')
+  @Get('link/:shortUrl')
   getLinkByShortUrl(@Param('shortUrl') shortUrl: string) {
     return this.linkService.getLinkByShortUrl(shortUrl);
   }
